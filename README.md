@@ -3,7 +3,7 @@ Data Engineering UVA Grad Course
 
 ### Journal Entries - Git O'reilly Textbook
 
-May 28th, 2024
+May 28th, 2024 - Chapters 1 and 2
 
 - I've used the basic git commands before and have collaborated on projects with others using git for version control as well. 
 The chapters were mostly a review but I enjoyed the visualizations and the 'why?' behind the structure of git. 
