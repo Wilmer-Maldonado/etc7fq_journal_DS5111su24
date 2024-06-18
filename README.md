@@ -22,3 +22,9 @@ June 10th, 2024 - Python Marking/Cleaning Text and Logging (Week 3 Journal)
 - This week 3 reading was mostly a review for me on how to use python functions to manipulate strings and search text for occurrences, counts of words or events.
 What was new to me was how to log a file. It does make sense that to store all the logging messages it might be best to place them in a file to not lose track.
 It seems like an ideal way to monitor usage and flag for errors that can be recorded in logs to later reference for debugging. 
+
+June 17th, 2024 - Python tests
+
+- For week 4 we went over the assert functions used in python tests functions and how pytest package is used to run test py scripts. 
+This section was mostly a review since knew pytest and how to use assert function. What I did find helpful is how to modify pytest command 
+to run only subtests of test.py if that's the only test I'm focused on testing/debugging code.
