@@ -28,3 +28,7 @@ June 17th, 2024 - Python tests
 - For week 4 we went over the assert functions used in python tests functions and how pytest package is used to run test py scripts. 
 This section was mostly a review since knew pytest and how to use assert function. What I did find helpful is how to modify pytest command 
 to run only subtests of test.py if that's the only test I'm focused on testing/debugging code.
+
+July 7th, 2024 - Github Workflow Automation
+
+- For week 5 we went over github actions workflow via yaml files. I've ran github actions before but haven't created one from scratch. I know that developrs sometimes use these features to deploy and test code pipelines that might not be used for production but for analytics and tracking. The structure of worflow actions starts with the triggers named events. Components are jobs that have defined steps with runners deciding where the code will execute. I plan to catch up this week on the labs and quizzes I missed last week, and confirm I am setting up repo correctly for grading in office hours.
