@@ -41,3 +41,6 @@ July 15th, 2024 - Decorators, Comprehensions, Dicts and some OOP
 
 - For week 7, we learned about decorators that add/extend the behavior of a function by the operation defined by the dedorator. Comprehensions and Dicts were already review, as well as OOP.
 
+July 20th, 2024 - Design Patterns
+
+- For week 8, learned about Design patterns, specifically how Singleton, Factory, and Template designs work as examples. Never studied Design patterns specifically, but this aligns how I think about code. I always try to map the features to a diagram and design pattern of my own before I start coding a codebase or start making PRs. 
