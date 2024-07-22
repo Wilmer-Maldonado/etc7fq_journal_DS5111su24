@@ -36,3 +36,8 @@ July 7th, 2024 - Github Workflow Automation
 July 8th, 2024 - Creating python packages
 
 - For week 6 we went over how to setup init.py, setup.py and a repo to make a pip installable package for python. I have had experience with making packages and virtual environments so this section was review. 
+
+July 15th, 2024 - Decorators, Comprehensions, Dicts and some OOP
+
+- For week 7, we learned about decorators that add/extend the behavior of a function by the operation defined by the dedorator. Comprehensions and Dicts were already review, as well as OOP.
+
