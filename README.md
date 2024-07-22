@@ -40,3 +40,4 @@ July 8th, 2024 - Creating python packages
 July 15th, 2024 - Decorators, Comprehensions, Dicts and some OOP
 
 - For week 7, we learned about decorators that add/extend the behavior of a function by the operation defined by the dedorator. Comprehensions and Dicts were already review, as well as OOP.
+
