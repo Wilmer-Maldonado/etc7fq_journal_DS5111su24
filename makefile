@@ -1,6 +1,11 @@
 default:
 	@cat makefile
 
+setup:
+	python3 -m venv env
+	. env/bin/activate; pip install --upgrade pip; pip install -r requirements.txt
+	@echo "To activate the virtual environment, run: source env/bin/activate"
+
 get_texts:
 	wget https://gutenberg.org/cache/epub/932/pg932.txt
 	wget https://gutenberg.org/cache/epub/17192/pg17192.txt
@@ -32,3 +37,6 @@ total_lines:
 
 total_words:
 	wc -w pg*.txt
+
+tokenizer:
+	python tokenizer.py
