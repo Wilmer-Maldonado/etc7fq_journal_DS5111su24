@@ -37,3 +37,6 @@ total_lines:
 
 total_words:
 	wc -w pg*.txt
+
+tokenizer:
+	python tokenizer.py
