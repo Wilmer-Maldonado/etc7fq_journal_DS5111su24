@@ -17,6 +17,7 @@ get_texts:
 	wget https://gutenberg.org/cache/epub/50852/pg50852.txt
 	wget https://gutenberg.org/cache/epub/65171/pg65171.txt
 	wget https://gutenberg.org/cache/epub/14082/pg14082.txt
+	wget https://gutenberg.org/cache/epub/10031/pg10031.txt
 
 raven_line_count: pg17192.txt
 	wc -l pg17192.txt
