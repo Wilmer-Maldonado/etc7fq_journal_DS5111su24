@@ -41,3 +41,9 @@ total_words:
 
 tokenizer:
 	python tokenizer.py
+
+.PHONY: tests
+tests:
+	- pytest tests/test_clean_text.py
+	- pytest tests/test_tokenize.py
+	- pytest tests/test_count_words.py
