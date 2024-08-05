@@ -44,8 +44,8 @@ tokenizer:
 
 .PHONY: tests
 tests:
-	- . env/bin/activate && pytest -m "not integration" tests/
+	. env/bin/activate && pytest -m "not integration" tests/
 
 .PHONY: integration_tests
 integration_tests:
-	- . env/bin/activate && pytest -m "integration" tests/
+	. env/bin/activate && pytest -m "integration" tests/
