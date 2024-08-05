@@ -1,6 +1,40 @@
 # etc7fq_journal_DS5111su24
 Data Engineering UVA Grad Course
 
+### Tokenizer Functions Documentation 
+
+Collection of Functions that Process Strings
+
+#### clean_text
+
+description: takes a string as an argument, converts string to all lowercase and removes punctuation.
+
+example use:
+
+example_text = "Python. python. PYTHON HellO!,WorLd?."
+
+clean_text(example_text) -> "python python python hello world"
+
+#### tokenize
+
+description: takes a string as an argument, returns a list of all the words in the string in lowercase form.
+
+example use:
+
+example_text = "Python. python. PYTHON HellO!,WorLd?."
+
+tokenize(example_text) -> [python, python, python, hello, world]
+
+#### count_words
+
+description: takes a string as an argument, returns word count dictionary of the string.
+
+example use:
+
+example_text = "Python. python. PYTHON HellO!,WorLd?."
+
+count_words(example_text) -> {"python": 3, "hello": 1, "world": 1}
+
 ### Journal Entries - Git O'reilly Textbook
 
 May 28th, 2024 - Chapters 1 and 2 (Week 1 Journal)
