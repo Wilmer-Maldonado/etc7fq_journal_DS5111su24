@@ -37,8 +37,7 @@ jobs:
       - name: Test with pytest (integration only)
         run: |
           make integration_tests
-        continue-on-error: true
-
+        #continue-on-error: true
       - name: Logs of error failed on purpose
         if: failure()
         run: |
