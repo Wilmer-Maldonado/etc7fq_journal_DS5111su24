@@ -44,6 +44,6 @@ tokenizer:
 
 .PHONY: tests
 tests:
-	- pytest tests/test_clean_text.py
-	- pytest tests/test_tokenize.py
-	- pytest tests/test_count_words.py
+	- . env/bin/activate && pytest tests/test_clean_text.py
+	- . env/bin/activate && pytest tests/test_tokenize.py
+	- . env/bin/activate && pytest tests/test_count_words.py
