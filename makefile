@@ -44,6 +44,8 @@ tokenizer:
 
 .PHONY: tests
 tests:
-	- . env/bin/activate && pytest tests/test_clean_text.py
-	- . env/bin/activate && pytest tests/test_tokenize.py
-	- . env/bin/activate && pytest tests/test_count_words.py
+	- . env/bin/activate && pytest -m "not integration" tests/
+
+.PHONY: integration_tests
+integration_tests:
+	- . env/bin/activate && pytest -m "integration" tests/

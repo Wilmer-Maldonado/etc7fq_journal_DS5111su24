@@ -31,7 +31,6 @@ def tokenize(text: str) -> List[str]:
     cleaned_text = clean_text(text)
     # makes text into split list of words
     list_words = cleaned_text.split()
-    list_words = [str(word) for word in list_words]
     # checks list_words is now list
     assert isinstance(list_words, list)
     logging.debug("tokenize return is list type")
@@ -60,7 +59,7 @@ def count_words(text: str) -> dict:
 
 
 def main():
-    text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
+    text = """But the Ravens sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
     print(f"clean_text output:\n{clean_text(text)}\n")
     print(f"tokenize output:\n{tokenize(text)}\n")
     print(f"cout_words output:\n{count_words(text)}\n")
