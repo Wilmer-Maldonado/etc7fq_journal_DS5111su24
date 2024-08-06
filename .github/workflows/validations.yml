@@ -44,7 +44,7 @@ jobs:
           cat test_log_file.log
       - name: Create env, install package, test package import 
         run: |
-        python3 -m venv env; . env/bin/activate; pip install --upgrade pip
-        . env/bin/activate; pip install git+https://github.com/Wilmer-Maldonado/etc7fq_DS5111su24@v0.0.2
-        . env/bin/activate; pip list
-        . env/bin/activate; python -c "import pkg_etc7fq as pkg; print(pkg.tokenize('To be or not to be'))"
+          python3 -m venv env; . env/bin/activate; pip install --upgrade pip
+          . env/bin/activate; pip install git+https://github.com/Wilmer-Maldonado/etc7fq_DS5111su24@v0.0.2
+          . env/bin/activate; pip list
+          . env/bin/activate; python -c "import pkg_etc7fq as pkg; print(pkg.tokenize('To be or not to be'))"
