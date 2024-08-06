@@ -3,7 +3,7 @@ Data Engineering UVA Grad Course
 
 #### Status Badge
 
-[![Python package](https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24/actions/workflows/validations.yml/badge.svg?branch=WEEK-05%2Fgithub_automation)](https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24/actions/workflows/validations.yml)
+[![Python package](https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24/actions/workflows/validations.yml/badge.svg)](https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24/actions/workflows/validations.yml)
 
 ### Tokenizer Functions Documentation 
 
