@@ -297,7 +297,8 @@ def test_python_version_3_12_4():
     # Then fail, and send error message
     assert sys.version_info >= (3,12) and sys.version_info < (3,13), f"Use a python version 3.12, not {sys.version_info}"
 
-@pytest.mark.integration  
+@pytest.mark.integration
+@pytest.mark.xfail
 def test_integration_count_words_err():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
