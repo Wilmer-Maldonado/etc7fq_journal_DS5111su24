@@ -9,6 +9,11 @@ on:
         required: false
         default: 'true'
 
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+
 jobs:
   build:
 

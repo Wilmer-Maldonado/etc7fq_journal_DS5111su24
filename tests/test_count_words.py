@@ -5,7 +5,7 @@ import subprocess
 repo_path = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(1, repo_path)
 
-from tokenizer import count_words, clean_text, tokenize
+from pkg_etc7fq import count_words, clean_text, tokenize
 import pytest
 import logging
 
