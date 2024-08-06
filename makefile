@@ -49,3 +49,6 @@ tests:
 .PHONY: integration_tests
 integration_tests:
 	. env/bin/activate && pytest -m "integration" tests/
+
+pkg_import_test:
+	. env/bin/activate && python -c "import pkg_etc7fq as pkg; print(pkg.tokenize('To be or not to be'))"
