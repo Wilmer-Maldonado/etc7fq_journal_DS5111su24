@@ -9,6 +9,7 @@ from pkg_etc7fq import count_words, clean_text, tokenize
 import pytest
 import logging
 
+
 def test_count_words_type():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -18,7 +19,7 @@ def test_count_words_type():
     assert isinstance(output, dict), f"Output is not a dictionary, but {type(output)}"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_count_words_type_error():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -39,7 +40,7 @@ def test_count_words_key_type():
     ), "All keys in output dict should be strings"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_count_words_key_type_error():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -60,7 +61,7 @@ def test_count_words_value_type():
     ), "All values in output dict should be integers"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_count_words_value_type_error():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -105,7 +106,7 @@ def test_count_words_full_match():
     ), "The test output and expected dictionary did not have matching word counts"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_count_words_full_match_error():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -227,87 +228,99 @@ def test_count_words_french():
 @pytest.mark.integration
 def test_integration_1():
     # Download the file via a shell command
-    subprocess.run(['wget', 'https://gutenberg.org/cache/epub/17192/pg17192.txt', '-O', 'test-integration-1.txt'], check=True)
+    subprocess.run(
+        [
+            "wget",
+            "https://gutenberg.org/cache/epub/17192/pg17192.txt",
+            "-O",
+            "test-integration-1.txt",
+        ],
+        check=True,
+    )
     # Given: the downloaded file
-    with open('test-integration-1.txt', 'r') as file:
+    with open("test-integration-1.txt", "r") as file:
         text = file.read()
     # When: text is cleaned, tokenized, and counted
     cleaned_text = clean_text(text)
     words = tokenize(text)
     counts = count_words(text)
-    # Then: Verify counts for 'best' matches with bash 
+    # Then: Verify counts for 'best' matches with bash
     # and using tokenizer functions
     bash_test = f"cat test-integration-1.txt | grep -i 'best' | wc -l"
-    bash_output = subprocess.check_output(
-        bash_test, shell=True, text=True
-    ).strip()
-    assert counts.get('best', 0) == int(bash_output)
-    # Then: Verify counts for 'blue' matches with bash 
+    bash_output = subprocess.check_output(bash_test, shell=True, text=True).strip()
+    assert counts.get("best", 0) == int(bash_output)
+    # Then: Verify counts for 'blue' matches with bash
     # and using tokenizer functions
     bash_test = f"cat test-integration-1.txt | grep -i 'blue' | wc -l"
-    bash_output = subprocess.check_output(
-        bash_test, shell=True, text=True
-    ).strip()
-    assert counts.get('blue', 0) == int(bash_output)
-    # Then: Verify counts for 'floor' matches with bash 
+    bash_output = subprocess.check_output(bash_test, shell=True, text=True).strip()
+    assert counts.get("blue", 0) == int(bash_output)
+    # Then: Verify counts for 'floor' matches with bash
     # and using tokenizer functions
     bash_test = f"cat test-integration-1.txt | grep -i 'floor' | wc -l"
-    bash_output = subprocess.check_output(
-        bash_test, shell=True, text=True
-    ).strip()
-    assert counts.get('floor', 0) == int(bash_output)
+    bash_output = subprocess.check_output(bash_test, shell=True, text=True).strip()
+    assert counts.get("floor", 0) == int(bash_output)
+
 
 @pytest.mark.integration
 def test_integration_2():
     # Download the file via a shell command
-    subprocess.run(['wget', 'https://gutenberg.org/cache/epub/932/pg932.txt', '-O', 'test-integration-2.txt'], check=True)
+    subprocess.run(
+        [
+            "wget",
+            "https://gutenberg.org/cache/epub/932/pg932.txt",
+            "-O",
+            "test-integration-2.txt",
+        ],
+        check=True,
+    )
     # Given: the downloaded file
-    with open('test-integration-2.txt', 'r') as file:
+    with open("test-integration-2.txt", "r") as file:
         text = file.read()
     # When: text is cleaned, tokenized, and counted
     cleaned_text = clean_text(text)
     words = tokenize(text)
     counts = count_words(text)
-    # Then: Verify counts for 'house' matches with bash 
+    # Then: Verify counts for 'house' matches with bash
     # and using tokenizer functions
     bash_test = f"cat test-integration-2.txt | grep -i 'house' | wc -l"
-    bash_output = subprocess.check_output(
-        bash_test, shell=True, text=True
-    ).strip()
-    assert counts.get('house', 0) == int(bash_output)
-    # Then: Verify counts for 'joke' matches with bash 
+    bash_output = subprocess.check_output(bash_test, shell=True, text=True).strip()
+    assert counts.get("house", 0) == int(bash_output)
+    # Then: Verify counts for 'joke' matches with bash
     # and using tokenizer functions
     bash_test = f"cat test-integration-2.txt | grep -i 'joke' | wc -l"
-    bash_output = subprocess.check_output(
-        bash_test, shell=True, text=True
-    ).strip()
-    assert counts.get('joke', 0) == int(bash_output), f"{bash_output}"
-    # Then: Verify counts for 'strode' matches with bash 
+    bash_output = subprocess.check_output(bash_test, shell=True, text=True).strip()
+    assert counts.get("joke", 0) == int(bash_output), f"{bash_output}"
+    # Then: Verify counts for 'strode' matches with bash
     # and using tokenizer functions
     bash_test = f"cat test-integration-2.txt | grep -i 'strode' | wc -l"
-    bash_output = subprocess.check_output(
-        bash_test, shell=True, text=True
-    ).strip()
-    assert counts.get('strode', 0) == int(bash_output)
+    bash_output = subprocess.check_output(bash_test, shell=True, text=True).strip()
+    assert counts.get("strode", 0) == int(bash_output)
+
 
 @pytest.mark.integration
-def test_python_version_3_12_4():
+def test_python_version_3_8_12():
     # Given python version from sys.version_info
-    # When python version is not 3.12.4
+    # When python version is not 3.12
     # Then fail, and send error message
-    assert sys.version_info >= (3,12) and sys.version_info < (3,13), f"Use a python version 3.12, not {sys.version_info}"
+    assert sys.version_info == (3, 8) or sys.version_info >= (
+        3,
+        12,
+    ), f"Use a python version 3.12 or 3.8, not {sys.version_info}"
+
 
 @pytest.mark.integration
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_integration_count_words_err():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
     # When: count_words method is called on sample text
     output = count_words(sample_text)
-    output['but'] = str(output['but']) # cause the type error
+    output["but"] = str(output["but"])  # cause the type error
     # Then: Verify Output count is int.
     try:
-        assert isinstance(output['but'], int), f"Output count is not int, but {type(output['but'])}"
+        assert isinstance(
+            output["but"], int
+        ), f"Output count is not int, but {type(output['but'])}"
     except AssertionError as e:
         logging.error(f"Error occurred: {e}")
         raise e

@@ -21,7 +21,7 @@ def test_clean_text_type():
     ), f"Output should be a string, but received {type(output)}"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_clean_text_type_error():
     # Given sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -40,7 +40,7 @@ def test_clean_text_case():
     assert output.islower(), "Output should be all lowercase"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_clean_text_case_error():
     # Given sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -62,7 +62,7 @@ def test_clean_text_full_match():
     ), f"""The test and expected output did not match exactly, check lowercase/punctuation"""
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_clean_text_full_match_error():
     # Given sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""

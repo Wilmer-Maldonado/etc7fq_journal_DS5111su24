@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.12.4"] 
+        python-version: ["3.8", "3.12"] 
 
     steps:
       - uses: actions/checkout@v4
@@ -35,6 +35,9 @@ jobs:
       - name: Get Gutenberg Files for Testing
         run: |
           make get_texts
+      - name: lint evaluation for tokenizer 
+        run: |
+          make lint
       - name: Test with pytest (non-integration only)
         if: ${{ github.event.inputs.run_non_integration_tests == 'true' }}
         run: |
