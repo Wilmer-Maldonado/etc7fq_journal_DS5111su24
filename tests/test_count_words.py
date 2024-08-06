@@ -300,12 +300,12 @@ def test_integration_2():
 @pytest.mark.integration
 def test_python_version_3_8_12():
     # Given python version from sys.version_info
-    # When python version is not 3.12
+    # When python version is not 3.8.x or 3.12.x
     # Then fail, and send error message
-    assert sys.version_info == (3, 8.18) or sys.version_info >= (
-        3,
-        12,
-    ), f"Use a python version 3.12 or 3.8.18, not {sys.version_info}"
+    major, minor, _ = sys.version_info[:3]
+    assert (major == 3 and minor == 8) or (
+        major == 3 and minor == 12
+    ), f"Use a Python version 3.8.x or 3.12.x, not {sys.version_info}"
 
 
 @pytest.mark.integration
