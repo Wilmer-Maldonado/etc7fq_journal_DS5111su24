@@ -18,5 +18,5 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24"
-Issues = "https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24/issues"
+Homepage = "https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24_lab_01"
+Issues = "https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24_lab_01/issues"
