@@ -5,7 +5,7 @@ import subprocess
 repo_path = os.path.join(os.path.dirname(__file__), "..")
 sys.path.insert(1, repo_path)
 
-from tokenizer import tokenize
+from pkg_etc7fq import tokenize
 import pytest
 
 

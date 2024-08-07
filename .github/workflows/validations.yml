@@ -9,6 +9,11 @@ on:
         required: false
         default: 'true'
 
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+
 jobs:
   build:
 
@@ -37,9 +42,11 @@ jobs:
       - name: Test with pytest (integration only)
         run: |
           make integration_tests
-        #continue-on-error: true
       - name: Logs of error failed on purpose
         if: failure()
         run: |
           echo "A previous step failed, showing logs to help debug..."
           cat test_log_file.log
+      - name: test package import 
+        run: |
+          make pkg_import_test

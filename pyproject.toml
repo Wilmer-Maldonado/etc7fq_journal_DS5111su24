@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=56.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pkg_etc7fq"
+version = "0.0.3"
+authors = [
+  { name="Wilmer Maldonado", email="etc7fq@virginia.edu" },
+]
+description = "A tokenizer package"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24_lab_01"
+Issues = "https://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24_lab_01/issues"

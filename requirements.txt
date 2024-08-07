@@ -1,3 +1,4 @@
+git+http://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24_lab_01@v0.0.3
 astroid==3.2.4
 dill==0.3.8
 iniconfig==2.0.0
@@ -9,3 +10,5 @@ pluggy==1.5.0
 pylint==3.2.6
 pytest==8.3.2
 tomlkit==0.13.0
+pip==24.2
+setuptools==72.1.0
