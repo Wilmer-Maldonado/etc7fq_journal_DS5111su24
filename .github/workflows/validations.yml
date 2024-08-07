@@ -1,0 +1,45 @@
+name: Python package
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      run_non_integration_tests:
+        description: 'Run non-integration tests'
+        required: false
+        default: 'true'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12.4"] 
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          make setup
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Get Gutenberg Files for Testing
+        run: |
+          make get_texts
+      - name: Test with pytest (non-integration only)
+        if: ${{ github.event.inputs.run_non_integration_tests == 'true' }}
+        run: |
+          make tests
+      - name: Test with pytest (integration only)
+        run: |
+          make integration_tests
+        #continue-on-error: true
+      - name: Logs of error failed on purpose
+        if: failure()
+        run: |
+          echo "A previous step failed, showing logs to help debug..."
+          cat test_log_file.log

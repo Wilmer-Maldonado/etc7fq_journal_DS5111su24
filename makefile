@@ -2,8 +2,8 @@ default:
 	@cat makefile
 
 setup:
-	python3 -m venv env
-	. env/bin/activate; pip install --upgrade pip; pip install -r requirements.txt
+	python3 -m venv env; . env/bin/activate; pip install --upgrade pip; pip install -r requirements.txt;
+	. env/bin/activate
 	@echo "To activate the virtual environment, run: source env/bin/activate"
 
 get_texts:
@@ -41,3 +41,11 @@ total_words:
 
 tokenizer:
 	python tokenizer.py
+
+.PHONY: tests
+tests:
+	. env/bin/activate && pytest -m "not integration" tests/
+
+.PHONY: integration_tests
+integration_tests:
+	. env/bin/activate && pytest -m "integration" tests/
