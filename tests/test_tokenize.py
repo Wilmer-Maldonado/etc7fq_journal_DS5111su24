@@ -18,7 +18,7 @@ def test_tokenize_type():
     assert isinstance(output, list), f"Output was not a list, but {type(output)}"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_tokenize_type_error():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -39,7 +39,7 @@ def test_tokenize_type_elements():
     ), "All elements in output should be strings"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_tokenize_type_elements_error():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -60,7 +60,7 @@ def test_tokenize_elements_letters_only():
     ), "All elements in output should be strings"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_tokenize_elements_letters_only_error():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""
@@ -108,7 +108,7 @@ def test_tokenize_full_match():
     ), "The test and expected output did not match exactly"
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=False)
 def test_tokenize_full_match_error():
     # Given: sample text
     sample_text = """But the Raven, sitting lonely on the placid bust, spoke only That one word, as if his soul in that one word he did outpour."""

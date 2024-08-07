@@ -42,8 +42,12 @@ total_words:
 tokenizer:
 	python tokenizer.py
 
+.PHONY: lint
+lint:
+	. env/bin/activate && pylint src/pkg_etc7fq/tokenizer.py
+
 .PHONY: tests
-tests:
+tests: lint
 	. env/bin/activate && pytest -m "not integration" tests/
 
 .PHONY: integration_tests
