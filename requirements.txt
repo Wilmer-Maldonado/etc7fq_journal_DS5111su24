@@ -1,4 +1,4 @@
-git+http://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24@v0.0.3
+git+http://github.com/Wilmer-Maldonado/etc7fq_journal_DS5111su24_lab_01@v0.0.3
 astroid==3.2.4
 dill==0.3.8
 iniconfig==2.0.0
