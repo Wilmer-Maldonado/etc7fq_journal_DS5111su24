@@ -48,3 +48,7 @@ July 20th, 2024 - Design Patterns
 July 30th, 2024 - Database Design
 
 - For week 9, I haven't gotten too far in the readings yet and working on the other labs. From what I have read database design is a structured format to be able to create read update delete information form a table in a consistent stable atomic way. 
+
+August 1st, 2024 - Snowflake
+
+- For week 10, I got to play around with snowflake. I've used databricks SQL query dashboard UI before and it was extremely similar to Snowflake. It was also interesting to learn how dbt interacts with snowflake and other backends. Snowflake is super common in job postings so I am glad we got cover its functionality.
