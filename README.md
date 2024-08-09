@@ -44,3 +44,7 @@ July 15th, 2024 - Decorators, Comprehensions, Dicts and some OOP
 July 20th, 2024 - Design Patterns
 
 - For week 8, learned about Design patterns, specifically how Singleton, Factory, and Template designs work as examples. Never studied Design patterns specifically, but this aligns how I think about code. I always try to map the features to a diagram and design pattern of my own before I start coding a codebase or start making PRs. 
+
+July 30th, 2024 - Database Design
+
+- For week 9, I haven't gotten too far in the readings yet and working on the other labs. From what I have read database design is a structured format to be able to create read update delete information form a table in a consistent stable atomic way. 
